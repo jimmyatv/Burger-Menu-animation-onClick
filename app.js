@@ -2,7 +2,7 @@ const burger = document.querySelector('.burger');
 const mobileNav = document.querySelector('.mobile-nav');
 
 
-//! without menyBar just onClick function
+//! without menuBar just onClick function
 // burger.addEventListener('click', function () {
 //     this.classList.toggle('is-active');
 // });  
