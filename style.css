@@ -28,7 +28,7 @@
 }
 
 
-.navBar {
+.scroll {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,7 +148,7 @@ nav ul li a {
         transition: var(--transition);
     }
 
-    .navBar a {
+    .mobile-nav a {
     margin: auto;
     display: block;
     width: 100%;
@@ -160,7 +160,7 @@ nav ul li a {
     border-radius: 30px;
     }
 
-    .navBar a:hover {
+    .mobile-nav a:hover {
         background-color: var(--light);
         color: var(--accend);
         transition: var(--transition);
