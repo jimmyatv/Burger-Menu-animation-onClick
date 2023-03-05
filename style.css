@@ -23,9 +23,10 @@
     margin: auto;
 }
 
-.activeDiv {
+.burger {
     display: none;
 }
+
 
 .navBar {
     display: flex;
@@ -46,16 +47,46 @@
     transition: var(--transition);
 }
 
+header {
+    background-image: url(./img/bcgrPic.webp);
+    height: 200vh;
+    background-position: center;
+    background-size: cover;
+}
+
 h1 {
     color: var(--light);
     font-size: 42px;
     letter-spacing: 1px;
+    transition: var(--transition);
 }
 
 nav {
     background-color: var(--primary);
     border-bottom: 5px solid var(--logoSpan);
+    position: fixed;
+    width: 100%;
+    transition: var(--transition);
 }
+
+nav.sticky {
+    background-color: #fff;
+    opacity: 0.9;
+}
+
+nav.sticky ul li a {
+    color: var(--logoSpan);
+    transition: var(--transition);
+}
+
+nav.sticky h1 {
+    color: var(--dark);
+}
+
+nav.sticky span {
+    background-color: var(--dark);
+}
+
 
 nav ul {
     display: flex;
@@ -70,39 +101,20 @@ nav ul li a {
 }
 
 @media screen and (max-width: 768px) {
-    .activeDiv {
-        display: block;
-        margin-top: 20px;
-    }
 
     nav {
-        padding: 18px 0;
+        padding: 8px 0;
+        position: fixed;
+        width: 100%;
     }
 
     nav div ul {
         display: none;
     }
 
-    nav h1 {
-        position: fixed;
-        z-index: 99;
-    }
-
-    .activeDiv {
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 99;
-        margin-right: 25px;
-    }
-
-    .burger {
-        position: fixed;
-        z-index: 99;
-    }
-
     h1 {
         font-size: 34px;
+        z-index: 98;
     }
 
     .container {
@@ -173,6 +185,8 @@ nav ul li a {
         transition: var(--transition);
     }
 
+   
+
     .burger:hover span:nth-child(2) {
         transform: translateX(10px);
         background-color: var(--logoSpan);
@@ -194,6 +208,13 @@ nav ul li a {
     .burger.is-active:hover span {
         background-color: var(--logoSpan);
     }
+
+    
+    
+
+    
+
+    
 
     
 }

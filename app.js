@@ -1,5 +1,6 @@
 const burger = document.querySelector('.burger');
 const mobileNav = document.querySelector('.mobile-nav');
+const scroll = document.querySelector('.scroll')
 
 
 //! without menuBar just onClick function
@@ -12,4 +13,8 @@ const mobileNav = document.querySelector('.mobile-nav');
 burger.addEventListener('click', () => {
     burger.classList.toggle('is-active');
     mobileNav.classList.toggle('is-active');
-})
+});
+
+window.addEventListener('scroll', () => {
+    scroll.classList.toggle('sticky', window.scrollY > 0);
+});
