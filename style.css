@@ -42,14 +42,44 @@
     color: var(--logoSpan);
 }
 
+.mobile-nav a {
+    position: relative;
+    transition: var(--transition);
+}
+
 .mobile-nav a:hover {
     color: var(--logoSpan);
-    transition: var(--transition);
+}
+
+.mobile-nav a::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--logoSpan);
+    left: 0;
+    bottom: -5px;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+
+}
+
+.mobile-nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+.mobile-nav a:hover {
+    color: var(--logoSpan);
 }
 
 header {
     background-image: url(./img/bcgrPic.webp);
-    height: 200vh;
+    height: 150vh;
     background-position: center;
     background-size: cover;
 }
@@ -69,19 +99,27 @@ nav {
     transition: var(--transition);
 }
 
-nav.sticky {
+
+/* Sticky */
+.scroll.sticky {
     background-color: #fff;
     opacity: 0.9;
 }
 
-nav.sticky ul li a {
-    color: var(--logoSpan);
-    transition: var(--transition);
+.scroll.sticky ul li a {
+    color: black;
+    /* transition: var(--transition); */
 }
 
-nav.sticky h1 {
+.scroll.sticky h1 {
     color: var(--dark);
 }
+
+.scroll.sticky a::after {
+    background: black;
+}
+
+/* ***************I */
 
 nav.sticky span {
     background-color: var(--dark);
@@ -121,21 +159,8 @@ nav ul li a {
         width: 95%;
     }
 
-    .burger {
-        display: block;
-        position: relative;
-        margin-top: 8px;
-        cursor: pointer;
-        
-        user-select: none;
-
-        appearance: none;
-        border: none;
-        outline: none;
-        background: none;
-        
-    }
-
+    
+    /* MOBILE NAV */
     .mobile-nav {
         position: fixed;
         top: 0;
@@ -166,8 +191,33 @@ nav ul li a {
         transition: var(--transition);
     }
 
+    /* MOBILE NAV IS-ACTIVE*/
     .mobile-nav.is-active {
         left: 0;
+    }
+
+    
+    
+    
+    /* BURGER */
+    .burger {
+        display: block;
+        position: relative;
+        margin-top: 8px;
+        cursor: pointer;
+        
+        user-select: none;
+
+        appearance: none;
+        border: none;
+        outline: none;
+        background: none;
+        
+    }
+
+    .burger:hover span:nth-child(2) {
+        transform: translateX(10px);
+        background-color: var(--logoSpan);
     }
 
     .burger span {
@@ -185,17 +235,15 @@ nav ul li a {
         transition: var(--transition);
     }
 
-   
-
-    .burger:hover span:nth-child(2) {
-        transform: translateX(10px);
+    /* BURGER IS-ACTIVE */
+    .burger.is-active:hover span {
         background-color: var(--logoSpan);
     }
 
     .burger.is-active span:nth-child(1) {
         transform: translate(0px, -2px) rotate(45deg);
     }
-
+    
     .burger.is-active span:nth-child(2) {
         opacity: 0;
         transform: translateX(15px);
@@ -205,9 +253,7 @@ nav ul li a {
         transform: translate(-3px, 3px) rotate(-45deg);
     }
 
-    .burger.is-active:hover span {
-        background-color: var(--logoSpan);
-    }
+    
 
     
     
